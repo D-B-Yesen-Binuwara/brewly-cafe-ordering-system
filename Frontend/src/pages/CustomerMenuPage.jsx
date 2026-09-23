@@ -5,11 +5,12 @@ import { menuCategories, menuItems } from '../data/menuData'
 import { useMenu } from '../hooks/useMenu'
 
 export function CustomerMenuPage() {
-  const { addItem, showNotice, searchQuery, setSearchQuery } = useOutletContext()
+  const { addItem, showNotice, setFulfilment, searchQuery, setSearchQuery } = useOutletContext()
   const { activeCategory, setActiveCategory, filteredItems } = useMenu(menuItems, 'Coffee', { value: searchQuery, setValue: setSearchQuery })
 
-  const addToCart = (item, size, quantity) => {
-    addItem(item, size, quantity)
+  const addToCart = (item, size, quantity, fulfilment) => {
+    addItem(item, size, quantity, fulfilment)
+    setFulfilment(fulfilment)
     showNotice(`${item.name} added to cart`)
   }
 

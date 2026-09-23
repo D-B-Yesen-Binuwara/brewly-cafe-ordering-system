@@ -1,4 +1,6 @@
 export const menuCategories = ['Coffee', 'Non Coffee', 'Food', 'Snack', 'Dessert']
+export const fulfilmentOptions = ['Dine in', 'Takeaway', 'Pickup']
+export const sizeOptions = ['Small', 'Large']
 
 // Menu entries are intentionally kept as data so API-backed items or supplied image URLs
 // can replace this fixture without changing the page or card components.
@@ -9,10 +11,4 @@ export const menuItems = [
   { id: 'v60', name: 'V60', initial: 'V', price: 5.95, category: 'Coffee', description: 'Pour-over coffee with a bright, clean taste.' },
 ]
 
-export const initialCart = menuItems.slice(0, 3).map((item) => ({
-  ...item,
-  quantity: 1,
-  size: 'Small · 250ml',
-}))
-
-export const formatMoney = (value) => `$ ${value.toFixed(2)}`
+export const formatMoney = (value) => `Rs. ${value.toFixed(2)}`
