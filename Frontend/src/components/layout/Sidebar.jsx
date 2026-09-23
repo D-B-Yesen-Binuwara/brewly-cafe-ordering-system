@@ -5,6 +5,7 @@ const links = [
   { label: 'Menu', to: '/menu' },
   { label: 'My orders', to: '/orders' },
   { label: 'History', to: '/history' },
+  { label: 'Contact us', to: '/contact' },
 ]
 
 export function Sidebar({ onNotice }) {
