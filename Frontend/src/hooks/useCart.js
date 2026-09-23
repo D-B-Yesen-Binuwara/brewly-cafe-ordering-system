@@ -6,11 +6,12 @@ export function useCart(initialItems = []) {
   const addItem = (item, size, quantity, fulfilment) => {
     setCart((currentCart) => {
       const sizeLabel = size === 'Small' ? 'Small · 250ml' : 'Large · 350ml'
+      const unitPrice = item.prices?.[size] ?? item.price
       const existingItem = currentCart.find((entry) => entry.id === item.id && entry.size === sizeLabel && entry.fulfilment === fulfilment)
       if (existingItem) {
         return currentCart.map((entry) => entry === existingItem ? { ...entry, quantity: entry.quantity + quantity } : entry)
       }
-      return [...currentCart, { ...item, size: sizeLabel, quantity, fulfilment }]
+      return [...currentCart, { ...item, unitPrice, size: sizeLabel, quantity, fulfilment }]
     })
   }
 
@@ -27,7 +28,7 @@ export function useCart(initialItems = []) {
   const summaryFor = (fulfilment) => {
     const visibleItems = fulfilment ? cart.filter((item) => item.fulfilment === fulfilment) : cart
     const itemCount = visibleItems.reduce((total, item) => total + item.quantity, 0)
-    const subtotal = visibleItems.reduce((total, item) => total + item.price * item.quantity, 0)
+    const subtotal = visibleItems.reduce((total, item) => total + (item.unitPrice ?? item.price) * item.quantity, 0)
     const discount = visibleItems.length ? 1.5 : 0
     return { itemCount, subtotal, discount, total: Math.max(0, subtotal - discount) }
   }

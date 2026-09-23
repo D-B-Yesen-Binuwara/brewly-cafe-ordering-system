@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-:root { font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif; color: #373431; background: #fffdfc; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; --page: #fffdfc; --surface: #fff; --surface-muted: #f8f4f1; --surface-accent: #fff1e8; --text: #373431; --text-strong: #171717; --text-muted: #8d857f; --border: #ece6e1; --border-control: #e5ded9; --control-selected: #2e2c2a; --accent: #f6782b; --accent-soft: #fff7f2; --accent-border: #f3b78e; --success: #2f9e62; --avatar-bg: #f0d5c5; --avatar-text: #8c4a25; --toast-bg: #2e2c2a; --visual-placeholder: #b06d43; color-scheme: light; }
+:root { font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif; color: #373431; background: var(--page); font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; --page: #fffdfc; --surface: #fff; --surface-muted: #f8f4f1; --surface-accent: #fff1e8; --text: #373431; --text-strong: #171717; --text-muted: #8d857f; --border: #ece6e1; --border-control: #e5ded9; --control-selected: #2e2c2a; --accent: #f6782b; --accent-soft: #fff7f2; --accent-border: #f3b78e; --success: #2f9e62; --avatar-bg: #f0d5c5; --avatar-text: #8c4a25; --toast-bg: #2e2c2a; --visual-placeholder: #b06d43; color-scheme: light; }
 :root[data-theme='dark'] { --page: #211e1b; --surface: #2b2724; --surface-muted: #342f2a; --surface-accent: #4a2d1f; --text: #f2e9e4; --text-strong: #fff9f5; --text-muted: #b7aaa2; --border: #4a413b; --border-control: #5a4d44; --control-selected: #f6e8df; --accent: #ff8b45; --accent-soft: #3f2a20; --accent-border: #b85b2a; --success: #64c98d; --avatar-bg: #5a3c2d; --avatar-text: #ffe6d7; --toast-bg: #171411; --visual-placeholder: #f0a16e; color-scheme: dark; }
 * { box-sizing: border-box; }
-body { margin: 0; min-width: 320px; min-height: 100vh; background: var(--page); }
+html { min-height: 100%; background: var(--page); overscroll-behavior-y: none; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: var(--page); overscroll-behavior-y: none; }
+#root { min-height: 100vh; background: var(--page); }
 button, input { font: inherit; }
 button { cursor: pointer; }
 button:disabled { cursor: not-allowed; opacity: .55; }
